@@ -1,10 +1,13 @@
 <?php
-function select_photos($db, $tbl)
+function select_photos($db, $tbl, $id)
 {
 	$sql = "SELECT * FROM $tbl;";
 	$result = query($db, $sql);
 	$rows = get_rows($db, $result);
-	return $rows;
+	
+	$r = [$tbl, $rows, $id];
+
+	return $r;
 }
 
 

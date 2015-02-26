@@ -82,14 +82,11 @@ if (!empty($_POST)) {
         <label for="tables[shops][location]">Location:</label>
           <input name="tables[shops][location]" id="tables[shops][location]" type="text"/><br />
         <label for="tables[shops][shop_telephone]">Shop Telephone:</label>
-          <input name="tables[shops][shop_telephone]" id="tables[shops][shop_telephone]" type="text"/>
+          <input name="tables[shops][shop_telephone]" id="tables[shops][shop_telephone]" type="text"/><br />
           
         <input type="submit" value="Add Printing Shop"/>
       </form>
-    </div>
-    
-    <h1><?php echo $output ?></h1>
-    
+    </div>    
     
     
     <div id="insert_prints">

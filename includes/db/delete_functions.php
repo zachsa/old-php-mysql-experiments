@@ -1,14 +1,32 @@
 <?php
 function delete_row($db)
 {
+    if (isset($_POST['options'])) {
+        $id = $_POST['options']['id'];
+    }
+
 	foreach ($_POST['delete'] as $table=>$i)
 	{
         foreach ($i as $key => $field)
         {
-            $sql = "DELETE FROM $table WHERE print_id = '$field';";
+            $sql = "DELETE FROM $table WHERE $id = '$field';";
             $result = query($db, $sql);
         }
     } 
+}
+
+
+
+function delete_row_generic_table($db, $id)
+{
+    foreach ($_POST['delete'] as $table=>$i)
+    {
+        foreach ($i as $key => $field)
+        {
+            $sql = "DELETE FROM $table WHERE $id = '$field';";
+            $result = query($db, $sql);
+        }
+    }
 }
 
 

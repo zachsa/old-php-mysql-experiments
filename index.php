@@ -19,19 +19,15 @@ if (!empty($_POST)) {
   	<head>
   	</head>
   	<body>
-    	
-
-
-
 
 
     	<div id="show_photos">
 
       		<h2>Photos</h2>
        	
-       		<?php $content = select_photos($db, "photos") ?>
+       		<?php $content = select_photos($db, 'photos', 'photo_id') ?>
        	
-       		<?php if (!empty($content)): ?>
+       		<?php if (!empty($content[1])): ?>
 	       		<?php include("includes/partials/standard_table.html.php"); ?>
 	       	<?php else: ?>
 	       		<p><?php echo "No photos in database" ?></p>
@@ -48,9 +44,9 @@ if (!empty($_POST)) {
       		
       		<h2>Galleries</h2>
        		
-       		<?php $content = select_photos($db, "galleries") ?>
+       		<?php $content = select_photos($db, 'galleries', 'gallery_id') ?>
        		
-       		<?php if (!empty($content)): ?>
+       		<?php if (!empty($content[1])): ?>
        	   		<?php include("includes/partials/standard_table.html.php"); ?>
 	       	<?php else: ?>
 	       		<p><?php echo "No photos in database" ?></p>
@@ -67,9 +63,9 @@ if (!empty($_POST)) {
       		
       		<h2>Products</h2>
        		
-       		<?php $content = select_photos($db, "products") ?>
+       		<?php $content = select_photos($db, 'products', 'product_id') ?>
        		
-       		<?php if (!empty($content) > 0): ?>
+       		<?php if (!empty($content[1]) > 0): ?>
        			<?php include("includes/partials/standard_table.html.php"); ?>
        		<?php else: ?>
 	       		<p><?php echo "No photos in database" ?></p>
@@ -117,7 +113,8 @@ if (!empty($_POST)) {
 
            					<td>
            						<input type="hidden" id="<?php echo "delete[prints][$i]" ?>" name="<?php echo "delete[prints][$i]" ?>" value="<?php echo $content[$i]['print_id'] ?>"/>
-          						<input type="submit" id="" value="Remove Print">
+           						<input type="hidden" id="options[id]" name="options[id]" value="print_id" />
+          						<input type="submit" id="" value="Remove Print"/>
           					</td>
 
    	        			</tr>
