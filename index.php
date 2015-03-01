@@ -1,5 +1,6 @@
 <?php
 include_once "includes/db_controller.php";
+include_once "includes/helpers.php";
 
 if (!empty($_POST)) {
   if (isset($_POST["update"])) {
@@ -170,6 +171,8 @@ if (!empty($_POST)) {
             			<?php endforeach ?>
           			</select>	
         		<?php endif; ?>
+
+            <?php $prints_exist = check_if_entries($results) ?>
         
         		<?php $results = select_gallery_names($db); ?>
         		<select name="tables[stock_details][gallery_id]">
@@ -179,7 +182,11 @@ if (!empty($_POST)) {
             			</option>
           			<?php endforeach ?>
         		</select>
-        
+
+            <?php $galleries_exist = check_if_entries($results) ?>
+            
+            <?php $check_disabled_args = [$prints_exist, $galleries_exist] ?>
+
 
         		<input type="hidden" id="options[field_swap][gallery_id][0]" name="options[field_swap][gallery_id][0]" value="galleries"/>
         		<input type="hidden" id="options[field_swap][gallery_id][1]" name="options[field_swap][gallery_id][1]" value="name"/>
@@ -189,7 +196,7 @@ if (!empty($_POST)) {
         
         		<input type="hidden" id="options[stock_update]" name="options[stock_update]" value="true"/>
         
-        		<input type="submit" value="Assign Stock"/>
+        		<input type="submit" value="Assign Stock" <?php echo check_disabled($check_disabled_args) ?> />
       		</form>
     	</div>
     

@@ -42,15 +42,7 @@ function get_rows_with_field($db, $result, $field)
 
 
 
-function check_row_count($rows)
-{
-	if (count($rows) < 1) {
-    	return false;
-    } else
-    {
-    	return $rows;
-  	} 
-}
+
 
 
 

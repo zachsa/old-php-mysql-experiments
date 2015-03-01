@@ -1,5 +1,6 @@
 <?php
 include_once "includes/db_controller.php";
+include_once "includes/helpers.php";
 
 if (!empty($_POST)) {
 	if (isset($_POST["update"])) {
@@ -101,6 +102,8 @@ if (!empty($_POST)) {
             </option>
           <?php endforeach ?>
         </select>
+
+        <?php $prints_exist = check_if_entries($results) ?>
        
         <select name="tables[prints][product_id]">
           <?php $results = select_product_with_id($db, "product_id"); ?>
@@ -114,8 +117,14 @@ if (!empty($_POST)) {
         <select name="options[repeats]">
           <?php for ($i=1; $i<=15; $i+=1) {echo "<option value='$i'>$i</option>";} ?>
         </select>
-        
-        <input type="submit" value="Add to database"/>
+
+        <?php $products_exist = check_if_entries($results) ?>
+
+
+        <?php $check_disabled_args = [$prints_exist, $products_exist] ?>
+
+
+        <input type="submit" value="Add to database" <?php echo check_disabled($check_disabled_args) ?>/>
       </form>
       
     </div>

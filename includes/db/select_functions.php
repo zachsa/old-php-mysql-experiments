@@ -1,4 +1,7 @@
 <?php
+
+
+
 function select_photos($db, $tbl, $id)
 {
 	$sql = "SELECT * FROM $tbl;";
