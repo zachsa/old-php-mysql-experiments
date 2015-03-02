@@ -35,6 +35,7 @@ function delete_from_stock($db)
 {
  	foreach ($_POST['update'] as $table=>$i)
  	{
+        ?><pre><?php print_r($_POST) ?></pre><?php 
 		foreach ($i as $key=>$field)
 		{
     		$sql = "UPDATE $table SET assigned = FALSE WHERE print_id = '$field'";

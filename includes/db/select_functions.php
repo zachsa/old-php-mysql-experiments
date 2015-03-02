@@ -85,7 +85,12 @@ function select_product_with_id($db)
 function select_stock($db)
 {
 	$sql = 
-	"SELECT * FROM stock_details 
+	"SELECT
+		stock_details.stock_id,
+		galleries.name as gallery_name,
+		prints.photo_id,
+		prints.product_id 
+	FROM stock_details 
 	 INNER JOIN galleries 
     on stock_details.gallery_id = galleries.gallery_id 
 	 INNER JOIN prints

@@ -244,21 +244,12 @@ if (!empty($_POST)) {
         		<?php for ($i=0; $i<count($content); $i ++): ?>
         		<form method="post" name="stock_table[<?php echo $i ?>]" action="">
           			<tr>
-            			<td><?php echo $content[$i]["gallery_id"] ?></td>
-            			<td><?php echo $content[$i]["print_id"] ?></td>
-            			<td><?php echo $content[$i]["quantity"] ?></td>
             			<td><?php echo $content[$i]["stock_id"] ?></td>
-            			<td><?php echo $content[$i]["name"] ?></td>
-            			<td><?php echo $content[$i]["address"] ?></td>
-            			<td><?php echo $content[$i]["contact_person"] ?></td>
-            			<td><?php echo $content[$i]["quantity"] ?></td>
-            			<td><?php echo $content[$i]["landline"] ?></td>
-            			<td><?php echo $content[$i]["cellphone"] ?></td>
+            			<td><?php echo $content[$i]["gallery_name"] ?></td>
             			<td><?php echo $content[$i]["photo_id"] ?></td>
             			<td><?php echo $content[$i]["product_id"] ?></td>
-            			<td><?php echo $content[$i]["assigned"] ?></td>
             			
-            			<td><input type="hidden" id="" name="<?php echo "update[prints][$i]" ?>" value="<?php echo $content[$i]['print_id'] ?>"/>
+            			<td><input type="hidden" id="" name="<?php echo "update[stock_details][$i]" ?>" value="<?php echo $content[$i]['stock_id'] ?>"/>
             			<input type="submit" id="" value="Remove From Gallery"></td>        
           			
           			</tr>
