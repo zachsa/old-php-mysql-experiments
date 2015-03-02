@@ -7,7 +7,6 @@
               <?php echo "<th>".$field_name."</th>"; ?>
             <? endforeach ?>
             <th></th>
-            <th></th>
           </tr>
         
         </thead>
