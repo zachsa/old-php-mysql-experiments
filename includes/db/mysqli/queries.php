@@ -43,7 +43,4 @@ function get_rows_with_field($db, $result, $field)
 
 
 
-
-
-
 ?>

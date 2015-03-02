@@ -14,15 +14,19 @@ if (!empty($_POST)) {
 ?>
 
 
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+    <?php include 'includes/html/page_head.html' ?>
 
 
-<html>
-  	<head>
-  	</head>
   	<body>
 
+    <?php include 'includes/html/header.html' ?>
 
-    	<div id="show_photos">
+
+    	<div id="show_photos" class="entry_field">
 
       		<h2>Photos</h2>
        	
@@ -41,7 +45,7 @@ if (!empty($_POST)) {
 
 
     
-    	<div id="show_galleries">
+    	<div id="show_galleries" class="entry_field">
       		
       		<h2>Galleries</h2>
        		
@@ -60,7 +64,7 @@ if (!empty($_POST)) {
 
 
     
-    	<div id="show_products">
+    	<div id="show_products" class="entry_field">
       		
       		<h2>Products</h2>
        		
@@ -82,7 +86,7 @@ if (!empty($_POST)) {
 <!-- ############################ Begin Prints Table ############################ -->
     	
 
-    	<div id="show_prints">
+    	<div id="show_prints" class="entry_field">
       		
       		<h2>Prints</h2>
       		
@@ -155,7 +159,7 @@ if (!empty($_POST)) {
 
     
     
-    	<div id="insert_stock_detail">
+    	<div id="insert_stock_detail" class="entry_field">
       		<h2>Gallery Stock Assignment</h2>
 
       		<form method="post" action="" name="stock_details">
@@ -216,7 +220,7 @@ if (!empty($_POST)) {
  <!-- ############################ Begin Stock Table ############################ -->
 
 
-    <div id="show_stock_info">
+    <div id="show_stock_info" class="entry_field">
       	
       	<h2>Stock</h2>
       	
@@ -276,7 +280,7 @@ if (!empty($_POST)) {
  <!-- ############################ End Stock Table ############################ -->
 
 
-
+  <?php include 'includes/html/footer.html' ?>
       
 	</body>
 </html>

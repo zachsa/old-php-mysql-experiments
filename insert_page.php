@@ -14,13 +14,18 @@ if (!empty($_POST)) {
 
 ?>
 
-<html>
-  <head>
-  </head>
+<!DOCTYPE html>
+
+<html lang="en-US">
+  
+  <?php include 'includes/html/page_head.html' ?>
+  
   <body>
+
+  <?php include 'includes/html/header.html' ?>
     
     
-    <div id="insert_photos">
+    <div id="insert_photos" class="entry_field">
       <h2>Add Photo</h2>
       <form action="" method="post" name="photos">
         <label for="tables[photos][photo_id]">Photo Title:</label>
@@ -37,7 +42,7 @@ if (!empty($_POST)) {
     </div>
     
     
-    <div id="insert_galleries">
+    <div id="insert_galleries" class="entry_field">
       <h2>Add Gallery</h2>
       <form action="" method="post" name="galleries">
         <label for="tables[galleries][name]">Name:</label>
@@ -57,7 +62,7 @@ if (!empty($_POST)) {
     
     
     
-    <div id="insert_products">
+    <div id="insert_products" class="entry_field">
       <h2>Add Product Type</h2>
       <form action="" method="post" name="products">
         <label for="tables[products][product_id]">Product name:</label>
@@ -75,7 +80,7 @@ if (!empty($_POST)) {
       </form>
     </div>
     
-    <div id="insert_shops">
+    <div id="insert_shops" class="entry_field">
       <h2>Add Print Shop</h2>
       <form action="" method="post" name="products">
         <label for="tables[shops][shop_name]">Shop Name:</label>
@@ -90,7 +95,7 @@ if (!empty($_POST)) {
     </div>    
     
     
-    <div id="insert_prints">
+    <div id="insert_prints" class="entry_field">
       <h2>Add Prints to Database</h2>
       <form method="post" action="" name="prints">
        
@@ -126,9 +131,9 @@ if (!empty($_POST)) {
 
         <input type="submit" value="Add to database" <?php echo check_disabled($check_disabled_args) ?>/>
       </form>
-      
-    </div>
+  </div>
   
-  
+  <?php include 'includes/html/footer.html' ?>
+
   </body>
 </html>
