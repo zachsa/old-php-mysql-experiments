@@ -132,6 +132,11 @@ th, td {
     text-align: center;
 }
 
+
+tr:hover {
+    background-color: #FBECC5;
+}
+
 /* Footer Formatting */
 
 
