@@ -22,8 +22,11 @@ if (!empty($_POST)) {
 
 
   	<body>
-
     <?php include 'includes/html/header.html' ?>
+
+    <div id="wrapper">
+
+    
 
 
     	<div id="show_photos" class="entry_field">
@@ -275,5 +278,6 @@ if (!empty($_POST)) {
 
   <?php include 'includes/html/footer.html' ?>
       
+  </div>    
 	</body>
 </html>
