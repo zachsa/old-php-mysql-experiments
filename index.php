@@ -248,18 +248,10 @@ if (!empty($_POST)) {
         		<?php for ($i=0; $i<count($content); $i ++): ?>
         		<form method="post" name="stock_table[<?php echo $i ?>]" action="">
           			<tr>
-<<<<<<< HEAD
                   <td><?php echo $content[$i]["stock_id"] ?></td>            			
                   <td><?php echo $content[$i]["name"] ?></td>
             			<td><?php echo $content[$i]["print_id"] ?></td>
             			<td><?php echo $content[$i]["photo_id"] ?></td>
-
-=======
-            			<td><?php echo $content[$i]["stock_id"] ?></td>
-            			<td><?php echo $content[$i]["gallery_name"] ?></td>
-            			<td><?php echo $content[$i]["photo_id"] ?></td>
-            			<td><?php echo $content[$i]["product_id"] ?></td>
->>>>>>> 1d8a9b245f3516d3228e4ef8a70722f884a60b14
             			
             			<td><input type="hidden" id="" name="<?php echo "update[stock_details][$i]" ?>" value="<?php echo $content[$i]['stock_id'] ?>"/>
             			<input type="submit" id="" value="Remove From Gallery"></td>        
