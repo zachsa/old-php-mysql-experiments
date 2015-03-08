@@ -37,9 +37,9 @@ function delete_from_stock($db)
  	{
 		foreach ($i as $key=>$field)
 		{
-    		$sql = "UPDATE $table SET assigned = FALSE WHERE print_id = '$field'";
+    		$sql = "UPDATE $table SET assigned = FALSE WHERE stock_id = '$field'";
     		$result = query($db, $sql);
-    		$sql = "DELETE FROM stock_details WHERE print_id = '$field'";
+    		$sql = "DELETE FROM stock_details WHERE stock_id = '$field'";
     		$result = query($db, $sql);
     	}
   	}
